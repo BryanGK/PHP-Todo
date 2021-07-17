@@ -2,10 +2,10 @@
 
 class Todo 
 {
-    protected $todo;
-    protected $date;
-    protected $description;
-    protected $is_completed = false;
+    public $todo;
+    public $date;
+    public $description;
+    public $is_completed = false;
 
     function __construct($todo, $date, $description)
     {

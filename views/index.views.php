@@ -27,7 +27,20 @@
     </div>
 
     <div class="todo-table">
-        <table></table>
+        <table class="table">
+            <tr>
+                <th scope="col">Todo</th>
+                <th scope="col">Description</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Completed</th>
+            </tr>
+            <tr>
+                <td><?= $todo->todo; ?></td>
+                <td><?= $todo->description; ?></td>
+                <td><?= $todo->date; ?></td>
+                <td><?= $todo->is_completed; ?></td>
+            </tr>
+        </table>
     </div>
 </body>
 
