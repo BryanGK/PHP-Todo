@@ -2,6 +2,10 @@ h1 {
     text-align: center;
 }
 
+.header_icon {
+    width: 3em;
+}
+
 .todo-form {
     width: 80%;
     margin: auto;

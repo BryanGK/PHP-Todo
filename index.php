@@ -1,25 +1,9 @@
 <?php
 
-class Todo 
-{
-    public $todo;
-    public $date;
-    public $description;
-    public $is_completed = false;
+$query = require 'bootstrap.php';
 
-    function __construct($todo, $date, $description)
-    {
-        $this->todo = $todo;
-        $this->date = $date;
-        $this->description = $description;
-    }
+require 'Todo.php';
 
-    function completed()
-    {
-        $this->is_completed = true;
-    }
-}
-
-$todo = new Todo('Walk the dog', '3/28/2021', 'walk the dog to the park to poop.');
+$todos = $query->selectAll('todos', 'Todo');
 
 require('./views/index.views.php');
