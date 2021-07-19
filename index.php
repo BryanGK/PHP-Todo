@@ -1,6 +1,6 @@
 <?php
 
-$query = require 'bootstrap.php';
+$query = require './core/bootstrap.php';
 
 require 'Todo.php';
 
