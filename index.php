@@ -1,9 +1,11 @@
 <?php
 
-$query = require './core/bootstrap.php';
+$database = require 'core/bootstrap.php';
 
-require 'Todo.php';
+$router = new Router;
 
-$todos = $query->selectAll('todos', 'Todo');
+$uri =
 
-require('./views/index.views.php');
+require Router::load('routes.php')->direct($uri);
+
+// 21:42 #16
