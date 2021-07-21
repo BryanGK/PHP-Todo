@@ -19,10 +19,19 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
     }
 
-    function insert(Todo $todo)
+    function insert($table, $parameters)
     {
-        $statement = $this->pdo->prepare("INSERT INTO todos (name, description, due_date) VALUES({$todo->name}, {$todo->description}, {$todo->due_date})");
-
-        $statement->execute();
+        $sql = sprintf(
+            'insert into %s (%s) values (%s)',
+            $table,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute($parameters);
+        } catch (Exception $e) {
+            die('Whoops, something went wrong! ' . $e);
+        }
     }
 }
