@@ -1,10 +1,10 @@
 <?php require('views/partials/head.php'); ?>
 
 <div class="todo-form">
-    <form>
+    <form method="POST" action="/todo">
         <label for="name">Name: </label>
         <input class="form-control" type="text" name="name">
-        <label for="date">Due Date: </label>
+        <label for="due_date">Due Date: </label>
         <input class="form-control" type="date" name="date">
         <label for="description">Description: </label>
         <textarea class="form-control" name="description" id="todo-description" cols="30" rows="10"></textarea>
