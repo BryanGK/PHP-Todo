@@ -9,7 +9,7 @@ class PagesController
 {
     public function home()
     {
-        require 'Todo.php';
+        require 'app/models/Todo.php';
 
         $todos = App::get('database')->selectAll('todos', 'Todo');
 

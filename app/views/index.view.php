@@ -1,4 +1,4 @@
-<?php require('views/partials/head.php'); ?>
+<?php require('app/views/partials/head.php'); ?>
 
 <div class="todo-form">
     <form method="POST" action="/todo">
@@ -31,4 +31,4 @@
     </table>
 </div>
 
-<?php require('views/partials/footer.php');
+<?php require('app/views/partials/footer.php');
